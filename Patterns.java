@@ -146,11 +146,121 @@ public class Patterns {
     }
     
     public static void increasingLetterTriangle(int n) {
-        int count = 1;
+        for (int i = 0; i < n; i++) {
+            for (char ch = 'A'; ch <= 'A'+i; ch++) {
+                System.out.print(ch);
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void reverseLetterTriangle(int n) {
+        for (int i = 0; i < n; i++) {
+            for (char ch = 'A'; ch < 'A'+(n-i); ch++) {
+                System.out.print(ch);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void alphaRampTriangle(int n) {
+        char ch = 'A';
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(ch);
+            }
+            ch++;
+            System.out.println();
+        }
+    }
+
+    public static void alphaHillTriangle(int n) {
         for (int i = 1; i <= n; i++) {
+            char ch = 'A';
+            //space
+            for (int j = 1; j <= n-i; j++) {
+                System.out.print(" ");
+            }
+            //star
+            for (int j = 1; j <= 2*i-1; j++) {
+                System.out.print(ch);
+                if(j < i) ch++;
+                if(j >= i) ch--;
+            }
+            //space
+            for (int j = 1; j <= n-i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void alphaTriangle(int n) {
+        for (int i = 1; i <= n; i++) {
+            char ch = (char) ('A'+ n-i);
             for (int j = 1; j <= i; j++) {
-                System.out.print(count+ " ");
-                count++;
+                System.out.print(ch);
+                ch++;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void symmetricVoid(int n) {
+        //1st half
+        for (int i = 1; i <= n; i++) {
+            //star
+            for (int j = n; j >= i; j--) {
+                System.out.print("*");
+            }
+            //space
+            for (int j = 1; j <= 2*i-2; j++) {
+                System.out.print(" ");
+            }
+            //star
+            for (int j = n; j >= i; j--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        //2nd half
+        for (int i = 1; i <= n; i++) {
+            //stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            //space
+            for (int j = 1; j <= 2*(n-i); j++) {
+                System.out.print(" ");
+            }
+            //stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void symmetricButterfly(int n) {
+        for (int i = 1; i <= 2*n-1; i++) {
+            int stars = i;
+            if(i > n) stars = 2*n-i;
+            //star
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+
+            int spaces = n-i;
+            if(i > n) spaces = 2*(stars-n);
+            //space
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+
+            //star
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
             }
             System.out.println();
         }
@@ -168,7 +278,15 @@ public class Patterns {
         // halfDiamond(5);
         // binaryTriangle(5);
         // numberCrown(5);
-        increasingNumTriangle(5);
+        // increasingNumTriangle(5);
+        // increasingLetterTriangle(5);
+        // reverseLetterTriangle(5);
+        // alphaRampTriangle(5);
+        // alphaHillTriangle(5);
+        // alphaTriangle(10);
+        // symmetricVoid(5);
+        symmetricButterfly(5);
+
     }
     
 }
