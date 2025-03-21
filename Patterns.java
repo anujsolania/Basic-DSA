@@ -251,8 +251,8 @@ public class Patterns {
                 System.out.print("*");
             }
 
-            int spaces = n-i;
-            if(i > n) spaces = 2*(stars-n);
+            int spaces = 2*(n-i);
+            if(i > n) spaces = 2*(i-n);
             //space
             for (int j = 1; j <= spaces; j++) {
                 System.out.print(" ");
@@ -261,6 +261,34 @@ public class Patterns {
             //star
             for (int j = 1; j <= stars; j++) {
                 System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void hollowRectangle(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n ; j++) {
+                if (i==1 || i==n || j==1 || j==n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void theNumber(int n) {
+
+        for (int i = 0; i < 2*n-1; i++) {
+            for (int j = 0; j < 2*n-1 ; j++) {
+                int top = i;
+                int bottom = 2*n - i;
+                int left = j;
+                int right = 2*n - j;
+                int num = n - Math.min(Math.min(top, bottom),Math.min(left, right));
+                System.out.print(num);
             }
             System.out.println();
         }
@@ -285,7 +313,9 @@ public class Patterns {
         // alphaHillTriangle(5);
         // alphaTriangle(10);
         // symmetricVoid(5);
-        symmetricButterfly(5);
+        // symmetricButterfly(5);
+        // hollowRectangle(5);
+        // theNumber(4);
 
     }
     
