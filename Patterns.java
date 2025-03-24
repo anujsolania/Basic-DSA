@@ -284,9 +284,9 @@ public class Patterns {
         for (int i = 0; i < 2*n-1; i++) {
             for (int j = 0; j < 2*n-1 ; j++) {
                 int top = i;
-                int bottom = 2*n - i;
+                int bottom = (2*n-1) - 1 - i;
                 int left = j;
-                int right = 2*n - j;
+                int right = (2*n-1) - 1 - j;
                 int num = n - Math.min(Math.min(top, bottom),Math.min(left, right));
                 System.out.print(num);
             }
@@ -315,7 +315,7 @@ public class Patterns {
         // symmetricVoid(5);
         // symmetricButterfly(5);
         // hollowRectangle(5);
-        theNumber(4);
+        // theNumber(4);
 
     }
     
