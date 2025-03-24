@@ -315,7 +315,7 @@ public class Patterns {
         // symmetricVoid(5);
         // symmetricButterfly(5);
         // hollowRectangle(5);
-        // theNumber(4);
+        theNumber(4);
 
     }
     
